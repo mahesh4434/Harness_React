@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Harness_React_1699349821380-pr-trigger-input-set
+  identifier: Build_Harness_React_1699349821380prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Harness_React
+  pipeline:
+    identifier: Build_Harness_React_1699349821380
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>

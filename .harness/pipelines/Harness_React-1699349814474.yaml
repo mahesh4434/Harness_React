@@ -6,7 +6,7 @@ pipeline:
   properties:
     ci:
       codebase:
-        connectorRef: account.Github_OAuth_1699349733030
+        connectorRef: github_connector
         repoName: Harness_React
         build: <+input>
   stages:

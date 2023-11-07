@@ -40,7 +40,7 @@ pipeline:
                     connectorRef: <+input>
                     repo: <+input>
                     tags:
-                      - latest
+                      - "0.1"
                     dockerfile: Dockerfile
           platform:
             os: Linux

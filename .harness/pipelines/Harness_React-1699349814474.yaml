@@ -6,9 +6,9 @@ pipeline:
   properties:
     ci:
       codebase:
-        build: <+input>
         connectorRef: account.Github_OAuth_1699349733030
         repoName: Harness_React
+        build: <+input>
   stages:
     - stage:
         identifier: build
@@ -26,26 +26,26 @@ pipeline:
                   type: Run
               - step:
                   identifier: npmtest
-                  name: npm_test
+                  name: npm_build
                   spec:
-                    command: npm run test
+                    shell: Sh
+                    command: npm run build
                   timeout: ""
                   type: Run
               - step:
-                  identifier: dockerbuild
-                  name: docker_build
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
                   spec:
-                    image: plugins/docker
-                    settings:
-                      dry_run: "true"
-                      repo: hello/world
-                      tags: latest
-                  timeout: ""
-                  type: Plugin
+                    connectorRef: <+input>
+                    repo: <+input>
+                    tags:
+                      - latest
+                    dockerfile: Dockerfile
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI

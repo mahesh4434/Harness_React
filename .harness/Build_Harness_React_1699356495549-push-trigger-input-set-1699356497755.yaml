@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_Harness_React_1699356495549-push-trigger-input-set
+  identifier: Build_Harness_React_1699356495549pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: default_project
+  pipeline:
+    identifier: Build_Harness_React_1699356495549
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
